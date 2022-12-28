@@ -1,0 +1,80 @@
+* {
+  font-family: Lato, serif;
+}
+
+body {
+  background-color: #000;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee {
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  user-select: none;
+}
+
+.name {
+  width: 140px;
+  height: 40px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  margin-right: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.salary {
+  width: 80px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.salary:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.salary:active {
+  background-color: rgba(255, 255, 255, 0.23);
+}
+
+.salary.disabled {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.salary.disabled.salary.disabled:hover {
+  cursor: default;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.salary:active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

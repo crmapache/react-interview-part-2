@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { CommonEmployee } from './components/CommonEmployee';
+import { createEmployees } from './helpers';
+import { Employee } from './types';
+
+
+const { log, clear } = console;
+
+const state: Employee[] = createEmployees()
 
 function App() {
+  const employeeClickHandler = (employeeId: number) => {};
+
+  clear();
+  log('render App');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      {state.map((employee) => (
+        <CommonEmployee
+          {...employee}
+          clickHandler={employeeClickHandler}
+          key={employee.id}
+        />
+      ))}
     </div>
   );
 }
